@@ -138,6 +138,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
@@ -146,7 +147,6 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
