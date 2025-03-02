@@ -292,5 +292,6 @@
 		$('.preloader').addClass('preloader-deactivate');
 	});
 	
+	  
 	
 })(jQuery);
