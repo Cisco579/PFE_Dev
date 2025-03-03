@@ -1,0 +1,132 @@
+:root {
+
+	--main-color: rgb(39, 13, 134);
+	--second-color: #2C2D3F;
+	--third-color: #fdfdfd;
+	
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/login_background.jpg')no-repeat center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top:10px;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    box-shadow: 1px 1px 10px 5px var(--main-color);
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.login-form .form-control {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.login-form label{
+    color: white;
+    font-weight: bold;
+}
+
+.login-form a{
+    color:var(--main-color);
+}
+.errorlist li {
+    color: red;
+}
+
+
+.login-form .btn {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:all 0.4s ease;
+}
+
+
+.login-form .text-center {
+    margin-top: 20px;
+}
+.check-forgot{
+    display: flex;
+    justify-content: space-between;
+}
+
+#rememberMe{
+    margin-top:2px;
+}
+.no-account{
+    color: var(--main-color);
+    margin-bottom: 15px;
+
+}
+
+.no-account:hover{
+    text-decoration: underline;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+.social svg{
+      width: 50px;
+}
+
+.social {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .social:hover {
+    border: 1px solid #2d79f3;
+    ;
+  }
+  

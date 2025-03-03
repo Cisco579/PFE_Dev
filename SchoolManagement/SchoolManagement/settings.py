@@ -24,11 +24,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #extensions
+    'django_extensions',
 
     # My application
     'Edusco',
 
     # django-allauth apps
+    'django.contrib.sites',  # Obligatoire pour Django-Allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -78,10 +81,10 @@ TEMPLATES = [
 
 
 #redirection url after login
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = 'home'
 
 #redirection url after logout
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = 'account_login'
 
 
 WSGI_APPLICATION = 'SchoolManagement.wsgi.application'
@@ -138,6 +141,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
+# django allauth include customforms of form.py
+ACCOUNT_FORMS = {
+    'login': 'Edusco.forms.CustomLoginForm',
+}
 #Apply email reception in console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
