@@ -1,10 +1,7 @@
-
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -17,39 +14,35 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    #my application
-    'Edusco',
-    
-    #django-allauth apps
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth',
-    
-    #crispy forms
-    # 'crispy_forms',
-    
-    
-    #default django apps
+    # Default django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # My application
+    'Edusco',
+
+    # django-allauth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # crispy forms (uncomment if needed)
+    # 'crispy_forms',
 ]
 
-#django-allauth settings
+# django-allauth settings
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
-
 ]
-
-#django-allauth settings
+# Default primary key field type about django-allauth settings
 SITE_ID = 1
 
 MIDDLEWARE = [
@@ -61,8 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
-    #django-allauth middleware
-    "allauth.account.middleware.AccountMiddleware",
+    # django-allauth middleware
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'SchoolManagement.urls'
@@ -70,7 +63,7 @@ ROOT_URLCONF = 'SchoolManagement.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Assurez-vous que ce répertoire existe
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,8 +76,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SchoolManagement.wsgi.application'
 
+#redirection url after login
+LOGIN_REDIRECT_URL = '/home/'
+
+#redirection url after logout
+LOGOUT_REDIRECT_URL = ''
+
+
+WSGI_APPLICATION = 'SchoolManagement.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -95,7 +95,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -115,11 +114,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -127,29 +125,24 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': 'your-client-id',
-            'secret': 'your-secret' 
-        }
-    }
-}
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-#REQUIRED AUTHENTIFICATION BY EMAIL
+# django-allauth settings
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+#Apply email reception in console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SOCIALACCOUNT_PROVIDERS = {} #social login
+
+
+
+

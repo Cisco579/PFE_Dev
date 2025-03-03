@@ -101,16 +101,16 @@
                             <div class="main-menu">
                                 <nav class="navigation">
                                     <ul class="nav menu">
-                                        <li class="active"><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Formations</a></li>
+                                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
+                                        <li><a href="{% url 'trainings' %}">Trainings</a></li>
 
                                     {% if user.is_authenticated %}
                                         <li class="nav-item"><a class="nav-link" href="#"><i class="icofont-dashboard"></i> Dashboard</a></li>
-                                        <li><a href="#"><i class="icofont-logout"></i> Déconnexion</a></li>
+                                        <li><a href="{% url 'account_logout' %}"><i class="icofont-logout"></i> Déconnexion</a></li>
                                     {% else %}
-                                        <li><a  href="#"><i class="fa fa-user-circle"></i>Connexion</a></li>
-                                        <li><a  href="#"><i class="fa fa-user-circle"></i>S'inscrire</a></li>
+                                        <li><a   href="{% url 'account_login' %}"><i class="fa fa-user-circle"></i> Connexion</a></li>
+                                        <li><a   href="{% url 'account_signup' %}"><i class="fa fa-user-circle"></i> S'inscrire</a></li>
                                         
                                     {% endif %}
 
@@ -121,7 +121,7 @@
                         </div>
                         <div class="col-lg-2 col-md-3 col-12">
                             <div class="get-quote">
-                                <a href="#" class="btn">Contact us</a>
+                                <a href="{% url 'contact' %}" class="btn">Contact us</a>
                             </div>
                         </div>
                     </div>

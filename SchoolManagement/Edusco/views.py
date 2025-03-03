@@ -1,16 +1,24 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
-#home pages views start here==>
 
-# call of home page
+
+# call of public pages
+@login_required
 def index(request):
     return render(request, 'public/index.html')
 
+def contact(request):
+    return render(request, 'public/contact.html')
 
-#call users profile page
+def trainings(request):
+    return render(request, 'public/trainings.html')
 
+def about(request):
+    return render(request, 'public/about.html')
 
-#home pages views end here<===
+#END call public pages
+
 
 #dashboard pages views start here==>
 
