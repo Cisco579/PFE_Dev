@@ -1,0 +1,92 @@
+:root {
+
+	--main-color: rgb(39, 13, 134);
+	--second-color: #2C2D3F;
+	--third-color: #fdfdfd;
+	
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/login_background.jpg')no-repeat center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top:10px;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    box-shadow: 1px 1px 10px 5px var(--main-color);
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.signup-form .form-control {
+    width: 100%;
+    padding: 2px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+  
+    font-size: 0.8rem;
+}
+
+.signup-form label{
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.signup-form a{
+    color:var(--main-color);
+}
+
+
+
+.signup-form .btn {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:all 0.4s ease;
+}
+
+
+.signup-form .text-center {
+    margin-top: 20px;
+}
+
+
+
+.have-account{
+    color: var(--main-color);
+    margin-bottom: 15px;
+
+}
+
+.have-account:hover{
+    text-decoration: underline;
+}
+

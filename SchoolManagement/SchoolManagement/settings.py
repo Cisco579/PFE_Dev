@@ -144,6 +144,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # django allauth include customforms of form.py
 ACCOUNT_FORMS = {
     'login': 'Edusco.forms.CustomLoginForm',
+     'signup': 'Edusco.forms.CustomSignupForm',
 }
 #Customise of user's role login
 AUTH_USER_MODEL = 'Edusco.CustomUser'
