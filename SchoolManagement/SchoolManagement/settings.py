@@ -145,6 +145,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_FORMS = {
     'login': 'Edusco.forms.CustomLoginForm',
 }
+#Customise of user's role login
+AUTH_USER_MODEL = 'Edusco.CustomUser'
+
 #Apply email reception in console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

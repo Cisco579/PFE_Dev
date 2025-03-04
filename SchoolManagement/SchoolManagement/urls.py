@@ -18,7 +18,7 @@ urlpatterns = [
     #end of public pages urls
     
     #dashboard pages urls
-    path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard/admin', views.admin_dashboard, name='admin_dashboard'),
     path('dashboard/profile/',views.profile, name='profile'),
     path('dashboard/settings/',views.settings, name='settings'),
    

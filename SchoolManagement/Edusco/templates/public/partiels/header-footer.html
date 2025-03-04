@@ -89,7 +89,7 @@
                         <div class="col-lg-3 col-md-3 col-12">
                             <!-- Start Logo -->
                             <div class="logo">
-                                <a href="#"><img src="{% static 'public/img/logo.png' %}" alt="#"></a>
+                                <a href="{% url 'home' %}"><img src="{% static 'public/img/logo.png' %}" alt="#"></a>
                             </div>
                             <!-- End Logo -->
                             <!-- Mobile Nav -->
@@ -105,17 +105,20 @@
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'trainings' %}">Trainings</a></li>
 
-                                    {% if user.is_authenticated %}
-                                        <li class="nav-item"><a class="nav-link" href="#"><i class="icofont-dashboard"></i> Dashboard</a></li>
-                                        <li><a href="{% url 'account_logout' %}"><i class="icofont-logout"></i> Déconnexion</a></li>
+                                        {% if user.is_authenticated %}
+                                        {% if user.role == 'admin' %}
+                                            <li><a href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
+                                        {% elif user.role == 'student' %}
+                                            <li><a href="{% url 'student_dashboard' %}">Student Dashboard</a></li>
+                                        {% endif %}
+                                        <li><a href="{% url 'account_logout' %}">Logout</a></li>
                                     {% else %}
-                                        <li><a   href="{% url 'account_login' %}"><i class="fa fa-user-circle"></i> Connexion</a></li>
-                                        <li><a   href="{% url 'account_signup' %}"><i class="fa fa-user-circle"></i> S'inscrire</a></li>
-                                        
+                                        <li><a href="{% url 'account_login' %}">Login</a></li>
+                                        <li><a href="{% url 'account_signup' %}">Signup</a></li>
                                     {% endif %}
-
                                     </ul>
                                 </nav>
+                               
                             </div>
                             <!--/ End Main Menu -->
                         </div>
