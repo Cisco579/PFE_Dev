@@ -1,20 +1,20 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .decorators import admin_required, student_required
+from .decorators import admin_required, student_required,teacher_required
 
-@login_required
+
 def index(request):
     return render(request, 'public/index.html')
 
-@login_required
+
 def contact(request):
     return render(request, 'public/contact.html')
 
-@login_required
+
 def trainings(request):
     return render(request, 'public/trainings.html')
 
-@login_required
+
 def about(request):
     return render(request, 'public/about.html')
 
@@ -44,3 +44,7 @@ def admin_dashboard(request):
 @student_required
 def student_dashboard(request):
     return render(request, 'dashboard/student_dashboard.html')
+
+@teacher_required
+def teacher_dashboard(request):
+    return render(request,'dashboard/teacher_dashboard')

@@ -13,8 +13,8 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background: url('img/login_background.jpg')no-repeat center;
-    background-size: cover;
+    background-color: rgb(14, 14, 14);
+ 
     display: flex;
     height: 100vh;
     width: 100%;
@@ -30,9 +30,8 @@ body {
     margin-top:10px;
     padding: 10px 20px 10px 20px;
     border: none;
-    border-radius: 0.5rem;
-    background-color: transparent;
-    box-shadow: 1px 1px 10px 5px var(--main-color);
+    background-color: none;
+    
 }
 
 .login-form h2 {
@@ -44,8 +43,8 @@ body {
 
 .login-form .form-control {
     width: 100%;
-    padding: 5px;
-    margin: 10px 0;
+    padding: 3px;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
 }
@@ -77,13 +76,13 @@ body {
 .login-form .text-center {
     margin-top: 20px;
 }
-.check-forgot{
+.check{
     display: flex;
     justify-content: space-between;
 }
 
-#rememberMe{
-    margin-top:2px;
+#with{
+    color: white;
 }
 .no-account{
     color: var(--main-color);
@@ -99,18 +98,18 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     justify-content: space-between;
   }
 
 .social svg{
-      width: 50px;
+      width: 40px;
 }
 
 .social {
     margin-top: 10px;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -118,7 +117,7 @@ body {
     font-weight: bold;
     color: black;
     font-size: 1rem;
-    gap: 10px;
+    gap: 15px;
     border: 1px solid #ededef;
     background-color: white;
     cursor: pointer;
@@ -127,6 +126,6 @@ body {
   
   .social:hover {
     border: 1px solid #2d79f3;
-    ;
+    
   }
   

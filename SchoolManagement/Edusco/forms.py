@@ -23,7 +23,7 @@ class CustomLoginForm(LoginForm):
             if user is not None:
                 if not user.is_active:
                     raise forms.ValidationError("This account is inactive.")
-                if user.role not in ['admin', 'student', 'visitor']:
+                if user.role not in ['admin', 'teacher','student', 'visitor']:
                     raise forms.ValidationError("Invalid user role.")
             else:
                 raise forms.ValidationError("Invalid login credentials.")
@@ -36,8 +36,10 @@ class CustomLoginForm(LoginForm):
 class CustomSignupForm(SignupForm):
     ROLE_CHOICES = (
         ('admin', 'Admin'),
+        ('teacher', 'Teacher'),
         ('student', 'Student'),
         ('visitor', 'Visitor'),
+       
     )
 
     def __init__(self, *args, **kwargs):
