@@ -104,7 +104,7 @@
                                         <li class="active"><a href="{% url 'home' %}">Home</a></li>
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'trainings' %}">Trainings</a></li>
-
+{% comment %} 
                                         {% if user.is_authenticated %}
                                         {% if user.role == 'admin' %}
                                             <li><a href="{% url 'admin_dashboard' %}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
@@ -112,7 +112,8 @@
                                             <li><a href="#"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                                         {% elif user.role == 'teacher' %}
                                             <li><a href="#"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-                                        {% endif %}
+                                        {% endif %} {% endcomment %}
+                                    {% if user.is_authenticated %}
                                         <li><a href="{% url 'account_logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                                     {% else %}
                                         <li><a href="{% url 'account_login' %}"><i class='fa fa-sign-in'></i> Login</a></li>
