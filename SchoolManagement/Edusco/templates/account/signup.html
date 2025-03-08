@@ -1,0 +1,41 @@
+<!-- filepath: e:\PFE_Dev\SchoolManagement\Edusco\templates\account\signup.html -->
+{% extends "account/base.html" %}
+{% load static%}
+{% load i18n %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+    
+            <form method="post" action="{% url 'account_signup' %}" class="signup-form">
+                <h2 class="text-center"><img src="{% static 'public/img/logo.png' %}" alt="#"></h2>
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    {{ form.role.label_tag }}
+                    {{ form.role }}
+                </div>
+                <div class="form-group">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn">Signup</button>
+            </form>
+                <p class="text-center have-account">
+                    {% trans "Already have an account?" %} <a href="{% url 'account_login' %}">{% trans "Login" %}</a>
+                </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+
+
+.logout-form .btn,h3{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logout-form p{
+    color: white;
+}
+.logout-form h3{
+    font-weight: bold;
+    color: white;
+   
+    font-size: 1.1rem;
+    border: 0.5px solid gray;
+    margin: 10px auto;
+    max-width: 350px ;
+    width: 300px ;
+   
+
+
+}
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid gray;
+    padding: 25px 0;
+    max-width:350px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+.logout .profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.logout .profile p{
+    
+    font-weight: bold;
+}
+.logout .btn{
+    
+    background-color: red;
+    font-size: 0.9rem;
+
+    
+}
+
+.logout-form .back-home .btn{
+    background-color: transparent;
+    color: white;
+    margin-top: 15px;
+    border: 0.5px solid gray;
+    
+}
