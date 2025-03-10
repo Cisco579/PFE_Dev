@@ -19,7 +19,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     #end of public pages urls
     
-  
    
 
 ]
