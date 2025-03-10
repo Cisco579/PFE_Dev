@@ -29,15 +29,17 @@ INSTALLED_APPS = [
 
     # My application
     'Edusco',
+    
+    # Dashboard app
+    'dashboard',
 
     # django-allauth apps
-    'django.contrib.sites',  # Obligatoire pour Django-Allauth
+    'django.contrib.sites',  # an obligation for django-allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    # crispy forms (uncomment if needed)
-    # 'crispy_forms',
+    
 ]
 
 # django-allauth settings
